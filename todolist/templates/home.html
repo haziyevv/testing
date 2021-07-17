@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+<h1>Salam meleykim</h1>
+
+{% if all_items %}
+<table class='table table-bordered'>
+{% for todo in all_items %}
+{% if todo.completed %}
+    <tr class='table-secondary'>
+        <td class='striker'>{{ todo.item }}</td>
+        <td>{{ todo.completed }}</td>
+        <td>Delete</td>
+    </tr>
+{% else %}
+    <tr>
+        <td>{{ todo.item }}</td>
+        <td>{{ todo.completed }}</td>
+        <td>Delete</td>
+    </tr>
+{% endif %}
+
+{% endfor %}
+</table>
+{% endif %}
+
+{% endblock %}
